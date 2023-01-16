@@ -23,7 +23,6 @@
   </build>
     
   <modules>
-  	<module>com.douzone</module>
   	<module>helloweb</module>
   </modules>
 </project>
