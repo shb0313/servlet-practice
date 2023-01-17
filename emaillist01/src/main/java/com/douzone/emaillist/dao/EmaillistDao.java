@@ -91,7 +91,7 @@ public class EmaillistDao {
 			}
 		}
 	}
-
+/*
 	public void deleteByEmail(String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -121,7 +121,7 @@ public class EmaillistDao {
 			}
 		}
 	}
-	
+*/	
 	private Connection getConnection() throws SQLException {
 		Connection conn = null;
 		
