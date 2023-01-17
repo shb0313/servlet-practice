@@ -5,7 +5,7 @@
     <artifactId>servlet-practice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>emaillist01</artifactId>
+  <artifactId>guestbook01</artifactId>
   <packaging>war</packaging>
   
   <properties>
@@ -37,17 +37,10 @@
 			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
-
-
-		<dependency>
-			<groupId>com.douzone</groupId>
-			<artifactId>guestbook01</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-  </dependencies>
+	</dependencies>
 	
 	<build>
-		<finalName>emaillist01</finalName>
+		<finalName>guestbook01</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -56,5 +49,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+  
 </project>

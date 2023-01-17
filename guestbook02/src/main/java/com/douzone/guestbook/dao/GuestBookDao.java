@@ -1,4 +1,4 @@
-package com.douzone.emaillist.dao;
+package com.douzone.guestbook.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,12 +8,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.douzone.emaillist.vo.EmaillistVo;
+import com.douzone.guestbook.vo.GuestBookVo;
 
-public class EmaillistDao {
-
-	public List<EmaillistVo> findAll() {
-		List<EmaillistVo> result = new ArrayList<>();
+public class GuestBookDao {
+	public List<GuestBookVo> findAll() {
+		List<GuestBookVo> result = new ArrayList<>();
 	
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -22,16 +21,17 @@ public class EmaillistDao {
 		try {
 			conn = getConnection();
 			
-			String sql ="select no, first_name, last_name, email from emaillist order by no desc";
+			String sql ="select no, name, password, message, reg_date from guestbook";
 			pstmt = conn.prepareStatement(sql);
 
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				EmaillistVo vo = new EmaillistVo();
+				GuestBookVo vo = new GuestBookVo();
 				vo.setNo(rs.getLong(1));
-				vo.setFirstName(rs.getString(2));
-				vo.setLastName(rs.getString(3));
-				vo.setEmail(rs.getString(4));
+				vo.setName(rs.getString(2));
+				vo.setPassword(rs.getString(3));
+				vo.setMessage(rs.getString(4));
+				vo.setRegDate(rs.getString(5));
 				
 				result.add(vo);
 			}
@@ -59,19 +59,19 @@ public class EmaillistDao {
 		return result;
 	}
 
-	public void insert(EmaillistVo vo) {
+	public void insert(GuestBookVo vo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			conn = getConnection();
 			
-			String sql = "insert into emaillist values(null, ?, ?, ?)";
+			String sql = "insert into guestbook values(null, ?, ?, ?, now())";
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, vo.getFirstName());
-			pstmt.setString(2, vo.getLastName());
-			pstmt.setString(3, vo.getEmail());
+			pstmt.setString(1, vo.getName());
+			pstmt.setString(2, vo.getPassword());
+			pstmt.setString(3, vo.getMessage());
 			
 			pstmt.executeUpdate();
 			
@@ -92,17 +92,18 @@ public class EmaillistDao {
 		}
 	}
 
-	public void deleteByEmail(String email) {
+	public void delete(Long no, String password) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			conn = getConnection();
 			
-			String sql = "delete from emaillist where email = ?";
+			String sql = "delete from guestbook where no = ? and password = ?";
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, email);
+			pstmt.setLong(1, no);
+			pstmt.setString(2, password);
 			
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -121,7 +122,7 @@ public class EmaillistDao {
 			}
 		}
 	}
-	
+
 	private Connection getConnection() throws SQLException {
 		Connection conn = null;
 		
