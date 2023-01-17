@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>GuestBookServlet</display-name>
+    <servlet-name>GuestBookServlet</servlet-name>
+    <servlet-class>com.douzone.guestbook.controler.GuestBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GuestBookServlet</servlet-name>
+    <url-pattern>/gb</url-pattern>
+  </servlet-mapping>
 </web-app>

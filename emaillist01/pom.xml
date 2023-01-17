@@ -37,17 +37,10 @@
 			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
-
-
-		<dependency>
-			<groupId>com.douzone</groupId>
-			<artifactId>guestbook01</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
   </dependencies>
 	
 	<build>
-		<finalName>emaillist01</finalName>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -55,6 +48,7 @@
 				<version>3.3.2</version>
 			</plugin>
 		</plugins>
+		<finalName>emaillist01</finalName>
 	</build>
 	
 </project>

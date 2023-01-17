@@ -1,4 +1,4 @@
-package com.douzone.emaillist.controler;
+package com.douzone.emaillist.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,15 +14,14 @@ import com.douzone.emaillist.vo.EmaillistVo;
 
 public class EmaillistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-
+		
 		String action = request.getParameter("a");
 		if("form".equals(action)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/view/form.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/form.jsp");
 			rd.forward(request, response);
-			
 		} else if("add".equals(action)) {
 			String firstName = request.getParameter("firstName");
 			String lastName = request.getParameter("lastName");
@@ -36,13 +35,11 @@ public class EmaillistServlet extends HttpServlet {
 			new EmaillistDao().insert(vo);
 			
 			response.sendRedirect("/emaillist02/el");
-			
-			
 		} else {
 			List<EmaillistVo> list = new EmaillistDao().findAll();
 			request.setAttribute("list", list);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/view/index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
 			rd.forward(request, response);
 		}
 	}
@@ -50,5 +47,4 @@ public class EmaillistServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

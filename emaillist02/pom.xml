@@ -37,13 +37,6 @@
 			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
-
-
-		<dependency>
-			<groupId>com.douzone</groupId>
-			<artifactId>guestbook01</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
   </dependencies>
 	
 	<build>

@@ -7,7 +7,22 @@
 	</parent>
 	<artifactId>helloweb</artifactId>
 	<packaging>war</packaging>
-	<dependencies>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
+  
+  <dependencies>
+		<!-- MariaDB JDBC Driver -->
+		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>3.0.8</version>
+		</dependency>
+				
 		<!-- servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -21,10 +36,17 @@
 			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
-		
-	</dependencies>
+  </dependencies>
 	
 	<build>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.2</version>
+			</plugin>
+		</plugins>
 		<finalName>helloweb</finalName>
 	</build>
 </project>

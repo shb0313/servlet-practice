@@ -37,10 +37,10 @@
 			<version>2.2</version>
 			<scope>provided</scope>
 		</dependency>
-	</dependencies>
+  </dependencies>
 	
 	<build>
-		<finalName>guestbook01</finalName>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -48,6 +48,7 @@
 				<version>3.3.2</version>
 			</plugin>
 		</plugins>
+		<finalName>guestbook02</finalName>
 	</build>
 	
 </project>

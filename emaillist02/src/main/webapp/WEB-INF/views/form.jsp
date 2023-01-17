@@ -1,6 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,7 +11,7 @@
 		아래 항목을 기입하고 등록 버튼을 클릭하세요.
 	</p>
 	<form action="/emaillist02/el" method="post">
-	<input type="hidden" name="a" value="add">
+		<input type="hidden" name="a" value="add">
 	    First name: <input type="text" name="firstName" value="" ><br>
 	    Last name: <input type="text" name="lastName" value=""><br>
 	    Email address: <input type="text" name="email" value=""><br>

@@ -13,10 +13,20 @@
     <description></description>
     <display-name>EmaillistServlet</display-name>
     <servlet-name>EmaillistServlet</servlet-name>
-    <servlet-class>com.douzone.emaillist.controler.EmaillistServlet</servlet-class>
+    <servlet-class>com.douzone.emaillist.controller.EmaillistServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>EmaillistServlet</servlet-name>
     <url-pattern>/el</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestServlet</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>com.douzone.emaillist.controller.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/ts</url-pattern>
   </servlet-mapping>
 </web-app>
