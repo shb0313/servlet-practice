@@ -1,3 +1,6 @@
+
+
+
 package jstlel;
 
 import java.io.IOException;
@@ -25,6 +28,7 @@ public class _02Servlet extends HttpServlet {
 		 */
 
 		// request scope
+		
 		UserVo vo1 = new UserVo();
 		vo1.setNo(1L);
 		vo1.setName("둘리1");
